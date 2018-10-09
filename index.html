@@ -1,0 +1,19 @@
+---
+layout: default
+title: Muslims of Thailand Prayer Network
+---
+
+<div id="home-content">
+  <div class="container grid-md">
+    <header>
+      <div id="logo"><img src="{{ site.url }}/img/mtpn-header.png" /></div>
+    </header>
+    <nav id="home-navigation" role="navigation">
+      <ul>
+        {% for item in site.data.nav.toc %}
+          <li><a href="{{ site.url }}{{ item.url }}" alt="{{ item.title }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</div>
