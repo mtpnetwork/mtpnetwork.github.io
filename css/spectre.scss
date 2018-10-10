@@ -12,7 +12,12 @@ $size-md: 720px !default;
 // Import full Spectre source code
 @import "spectre";
 
-#logo img { max-width: 300px; height: auto; }
+body { background: #f3f3f3; }
+.page { margin-top: 2rem; }
+#logo img { max-width: 200px; height: auto; }
+#navigation { display: flex; align-items: flex-end; }
+#navigation div { flex: 3 1 auto; }
+#navigation a { flex: auto; margin-left: 1rem; text-align: right; }
 
 #home-content { background: url('{{site.baseurl}}/img/km80-blur.jpg') no-repeat center center fixed; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; overflow: scroll; resize: both; }
 #home-content { display: flex; align-items: center; justify-content: center; height: 100vh; }

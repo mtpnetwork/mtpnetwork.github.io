@@ -3,17 +3,10 @@ layout: default
 title: MTPN | Resources
 ---
 
-<div id="content">
-  <div class="container grid-md">
-    <header>
-      <div id="logo"><a href="{{ site.url }}"><img src="{{ site.url }}/img/mtpn-logo.png" /></a></div>
-    </header>
-    <nav id="navigation" role="navigation">
-      <ul>
-        {% for item in site.data.nav.toc %}
-          <li><a href="{{ site.url }}{{ item.url }}" alt="{{ item.title }}">{{ item.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
+<div class="page">
+  <div id="content">
+    <div class="container grid-md">
+      {% include header.html %}
+    </div>
   </div>
 </div>
