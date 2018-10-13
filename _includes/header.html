@@ -1,6 +1,7 @@
 <header>
   <nav id="navigation" role="navigation">
     <div id="logo"><a href="{{ site.url }}"><img src="{{ site.url }}/img/mtpn-logo.png" /></a></div>
+    <a href="https://updates.mtpnetwork.org/" alt="MTPN Updates" target="_blank">Updates</a>
     {% for item in site.data.nav.toc %}
       <a href="{{ site.url }}{{ item.url }}" alt="{{ item.title }}">{{ item.title }}</a>
     {% endfor %}
