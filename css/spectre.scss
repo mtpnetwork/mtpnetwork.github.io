@@ -19,8 +19,9 @@ body { background: #f3f3f3; }
 .page { margin-top: 2rem; }
 header { margin-bottom: 1rem; }
 #navigation { display: flex; align-items: flex-end; }
-#navigation div { flex: 3 1 auto; }
-#navigation a { flex: auto; margin-left: 1rem; text-align: right; }
+#navigation div#logo { flex: 3 1 auto; }
+#navigation div.nav-link { flex: auto; padding-left: 0.5rem; text-align: right; }
+.active-page-link { text-decoration: underline; }
 #logo img { max-width: 200px; height: auto; }
 #logo a { margin-left: 0; }
 
