@@ -38,6 +38,11 @@
     .pagination a { flex: 1 1 auto; }
     .pagination a.next { text-align: right; }
     .tag-result p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; }
+    .glightbox-container .ginner-container { padding: 3rem; }
+    .glightbox-clean .ginner-container { box-shadow: unset; -webkit-box-shadow: unset; -moz-box-shadow: unset; }
+    .glightbox-clean .gslide-desc { display: block; font-size: 1em; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; line-height: 1.5; }
+    .glightbox-desc { display: block; }
+    a.glightbox-link, a.glightbox-link:hover, a.glightbox-link:visited { color: #222; text-decoration: none; }
     {CustomCSS}
   </style>
 </head>
@@ -115,8 +120,13 @@
               {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
               {block:Photos}
               <figure class="{block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
-                {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">{LinkCloseTag}
-                {block:Caption}<figcaption class="caption">{Caption}</figcaption>{/block:Caption}
+                <a href="{PhotoURL-HighRes}" class="glightbox-link glightbox{PostID}"><img src="{PhotoURL-HighRes}" alt="" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}" data-glightbox="descPosition: right;" />
+                  {block:Caption}
+                  <div class="glightbox-desc">
+                    <figcaption class="caption">{Caption}</figcaption>
+                  </div>
+                  {/block:Caption}
+                </a>
               </figure>
               {/block:Photos}
             </div>
@@ -202,5 +212,16 @@
       </footer>
     </div>
   </div>
+  <script src="https://mtpnetwork.org/js/glightbox.min.js"></script>
+  <script>
+  {block:Posts}
+  {block:Photoset}
+  var lightbox{PostID} = GLightbox({
+    selector: 'glightbox{PostID}',
+    descPosition: 'right'
+  });
+  {/block:Photoset}
+  {/block:Posts}
+  </script>
 </body>
 </html>
