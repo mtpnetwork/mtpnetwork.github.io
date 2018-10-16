@@ -29,6 +29,8 @@
     article.post { background: #fff; padding: 1rem; margin-bottom: 1rem; }
     .post figure { margin: 1rem; }
     .post img { width: 100%; height: auto; }
+    .post ul, .post ul li { margin-top: 0; }
+    .post-border { border-top: 7px #7bbbee solid; }
     .post-footer p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; text-align: right; margin-bottom: 0.5rem; }
     ul.tags { margin: 0; list-style: none; text-align: right; }
     ul.tags li { display: inline-block; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; }
@@ -58,7 +60,7 @@
         {block:TagPage}<article class="post"><div class="tag-result"><p class="mb-0">Updates tagged #{Tag}.</p></div></article>{/block:TagPage}
 
         {block:Posts}
-        <article class="post {PostType} {TagsAsClasses}">
+        <article class="post post-border {PostType} {TagsAsClasses}">
 
           <div class="post-footer">
             {block:Date}
@@ -72,7 +74,7 @@
           </div>
 
           {block:Text}
-            {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+            {block:Title}<h2>{Title}</h2>{/block:Title}
             {block:Body}
             <div class="body-text">
               {Body}
