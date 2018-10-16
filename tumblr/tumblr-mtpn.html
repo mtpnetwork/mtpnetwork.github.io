@@ -7,6 +7,14 @@
   <title>{Title}{block:PostSummary} | {PostSummary}{/block:PostSummary}</title>
   {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127545103-1"></script>
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-127545103-1']);
+    _gaq.push(['_setDomainName', 'mtpnetwork.org']);
+    _gaq.push(['_trackPageview']);
+  </script>
+
   <link rel="apple-touch-icon" href="{PortraitURL-128}" />
   <link rel="icon" href="{PortraitURL-128}" />
   <link rel="canonical" href="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}" />
@@ -15,14 +23,18 @@
   {/block:Hidden}
   <link rel="stylesheet" href="https://mtpnetwork.org/css/spectre.css" />
   <style>
+    .mb-0 { margin-bottom: 0; }
     iframe.tmblr-iframe{display: none;}
     article.post { background: #fff; padding: 1rem; margin-bottom: 1rem; }
     .post figure { margin: 1rem; }
     .post img { width: 100%; height: auto; }
-    .post-footer p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; text-align: right; margin-bottom: 0; }
+    .post-footer p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; text-align: right; margin-bottom: 0.5rem; }
+    ul.tags { margin: 0; list-style: none; text-align: right; }
+    ul.tags li { display: inline-block; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; }
     .pagination { display: flex; align-items: flex-end; }
     .pagination a { flex: 1 1 auto; }
     .pagination a.next { text-align: right; }
+    .tag-result p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; }
     {CustomCSS}
   </style>
 </head>
@@ -32,15 +44,17 @@
       <header>
         <nav id="navigation" role="navigation">
           <div id="logo"><a href="https://mtpnetwork.org"><img src="https://mtpnetwork.org/img/mtpn-logo.png" /></a></div>
-          <btn class="btn btn-primary"><a href="https://updates.mtpnetwork.org/" alt="MTPN Updates" target="_blank">Updates</a></btn>
-          <btn class="btn btn-link"><a href="http://localhost:4000/subscribe/" alt="Subscribe">Subscribe</a></btn>
-          <btn class="btn btn-link"><a href="http://localhost:4000/contact/" alt="Contact">Contact</a></btn>
+          <div id="nav-buttons">
+            <btn class="btn btn-primary"><a href="https://updates.mtpnetwork.org/" alt="MTPN Updates">Updates</a></btn>
+            <btn class="btn btn-link"><a href="https://mtpnetwork.org/subscribe/" alt="Subscribe">Subscribe</a></btn>
+            <btn class="btn btn-link"><a href="https://mtpnetwork.org/contact/" alt="Contact">Contact</a></btn>
+          </div>
         </nav>
       </header>
 
       <main role="main" class="content">
 
-        {block:TagPage}<div class="result"><p>{lang:TagResultCount posts tagged Tag 3}</p></div>{/block:TagPage}
+        {block:TagPage}<article class="post"><div class="tag-result"><p class="mb-0">Updates tagged #{Tag}.</p></div></article>{/block:TagPage}
 
         {block:Posts}
         <article class="post {PostType} {TagsAsClasses}">
@@ -152,6 +166,16 @@
             {/block:Answerer}
             <div class="replies">{Replies}</div>
           {/block:Answer}
+
+          {block:HasTags}
+          <ul class="tags">
+            {block:Tags}
+            <li>
+              &nbsp;<a href="{TagURL}">#{Tag}</a>
+            </li>
+            {/block:Tags}
+          </ul>
+          {/block:HasTags}
 
         </article>
         {/block:Posts}
