@@ -5,7 +5,7 @@ $primary-color: #1b4c84;
 $secondary-color: #168fc9;
 
 $base-font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-$fallback-font-family: "Helvetica Neue", sans-serif !default;
+$fallback-font-family: "Helvetica Neue", Helvetica, sans-serif !default;
 $form-font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
 
 $size-md: 720px !default;
@@ -20,7 +20,7 @@ body { background: #f3f3f3; }
 header { margin-bottom: 1rem; }
 #navigation { display: flex; align-items: flex-end; }
 #navigation div#logo { flex: 4 1 auto; }
-#navigation btn { margin-left: 0.5rem; }
+#navigation btn { margin-left: 0.5rem; font-family: $fallback-font-family; font-weight: bold; }
 #navigation a:hover { text-decoration: none; }
 #navigation .btn-primary { background: #7bbbee; border: 1px solid #7bbbee; }
 #navigation .btn-primary a, #navigation .btn-primary a:visited { color: #f3f3f3; }
