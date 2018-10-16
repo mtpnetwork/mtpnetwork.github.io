@@ -1,9 +1,11 @@
 <header>
   <nav id="navigation" role="navigation">
     <div id="logo"><a href="{{ site.url }}"><img src="{{ site.url }}/img/mtpn-logo.png" /></a></div>
-    <btn class="btn {% if page.page_title == item.title %}btn-primary{% else %}btn-link{% endif %}"><a href="https://updates.mtpnetwork.org/" alt="MTPN Updates" target="_blank">Updates</a></btn>
-    {% for item in site.data.nav.toc %}
-      <btn class="btn {% if page.page_title == item.title %}btn-primary{% else %}btn-link{% endif %}"><a href="{{ site.url }}{{ item.url }}" alt="{{ item.title }}">{{ item.title }}</a></btn>
-    {% endfor %}
+    <div id="nav-buttons">
+	    <btn class="btn {% if page.page_title == item.title %}btn-primary{% else %}btn-link{% endif %}"><a href="https://updates.mtpnetwork.org/" alt="MTPN Updates">Updates</a></btn>
+	    {% for item in site.data.nav.toc %}
+	    <btn class="btn {% if page.page_title == item.title %}btn-primary{% else %}btn-link{% endif %}"><a href="{{ site.url }}{{ item.url }}" alt="{{ item.title }}">{{ item.title }}</a></btn>
+	    {% endfor %}
+  	</div>
   </nav>
 </header>
