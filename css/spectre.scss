@@ -39,7 +39,6 @@ header { margin-bottom: 1rem; }
 .form-bottom { background: #fafafa; minimum-height: 8px; }
 .form-bottom p { color: #777; font-family: $fallback-font-family; font-size: 0.8em; text-align: center; padding: 0.5rem 0 0.3rem; }
 
-.mc-field-group label { }
 .mc-field-group .radio-label { display: block; }
 
 #home-content { background: url('{{site.baseurl}}/img/km80-blur.jpg') no-repeat center center fixed; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; overflow: scroll; resize: both; }
@@ -67,7 +66,7 @@ footer { margin: 1rem 0; color: #aaa; font-family: $fallback-font-family; text-a
 #mc_embed_signup .small-meta {font-size: 11px;}
 #mc_embed_signup .nowrap {white-space:nowrap;}
 
-#mc_embed_signup .mc-field-group {clear:left; position:relative; width:96%; padding-bottom:1rem; min-height:50px;}
+#mc_embed_signup .mc-field-group {clear:left; position:relative; width:100%; padding-bottom:1rem; min-height:50px;}
 #mc_embed_signup .size1of2 {clear:none; float:left; display:inline-block; width:46%; margin-right:4%;}
 * html #mc_embed_signup .size1of2 {margin-right:2%; /* Fix for IE6 double margins. */}
 #mc_embed_signup .mc-field-group label {display:block; margin-bottom:3px;}
