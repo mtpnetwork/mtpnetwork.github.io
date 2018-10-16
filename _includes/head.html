@@ -7,10 +7,11 @@
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127545103-1"></script>
   <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-127545103-1']);
-    _gaq.push(['_setDomainName', 'mtpnetwork.org']);
-    _gaq.push(['_trackPageview']);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-127545103-1');
   </script>
   
   <link rel="stylesheet" href="{{ site.url }}/css/spectre.css" />
