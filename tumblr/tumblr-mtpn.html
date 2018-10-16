@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{Title}{block:PostSummary} | {PostSummary}{/block:PostSummary}</title>
+  {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+  <link rel="apple-touch-icon" href="{PortraitURL-128}" />
+  <link rel="icon" href="{PortraitURL-128}" />
+  <link rel="canonical" href="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}" />
+
+  {block:Hidden}
+  {/block:Hidden}
+  <link rel="stylesheet" href="https://mtpnetwork.org/css/spectre.css" />
+  <style>
+    iframe.tmblr-iframe{display: none;}
+    article.post { background: #fff; padding: 1rem; margin-bottom: 1rem; }
+    .post figure { margin: 1rem; }
+    .post img { width: 100%; height: auto; }
+    .post-footer p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; text-align: right; margin-bottom: 0; }
+    .pagination { display: flex; align-items: flex-end; }
+    .pagination a { flex: 1 1 auto; }
+    .pagination a.next { text-align: right; }
+    {CustomCSS}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="container grid-md">
+      <header>
+        <nav id="navigation" role="navigation">
+          <div id="logo"><a href="https://mtpnetwork.org"><img src="https://mtpnetwork.org/img/mtpn-logo.png" /></a></div>
+          <div class="nav-link"><a class="active-page-link" href="https://updates.mtpnetwork.org/" alt="MTPN Updates" target="_blank">Updates</a></div>
+            <div class="nav-link"><a href="https://mtpnetwork.org/subscribe/" alt="Subscribe">Subscribe</a></div>
+            <div class="nav-link"><a  href="https://mtpnetwork.org/contact/" alt="Contact">Contact</a></div>
+          </ul>
+        </nav>
+      </header>
+
+      <main role="main" class="content">
+
+        {block:TagPage}<div class="result"><p>{lang:TagResultCount posts tagged Tag 3}</p></div>{/block:TagPage}
+
+        {block:Posts}
+        <article class="post {PostType} {TagsAsClasses}">
+
+          <div class="post-footer">
+            {block:Date}
+              {block:NewDayDate}<p><a href="{Permalink}" class="permalink">{DayOfMonth} {Month} {Year}</a></p>{/block:NewDayDate}
+              {block:SameDayDate}<p><a href="{Permalink}" class="permalink">{DayOfMonth} {Month} {Year}</a></p>{/block:SameDayDate}
+            {/block:Date}
+
+            {block:IndexPage}
+              <!--p class="permalink-container"><a href="{Permalink}" class="permalink">{lang:Permalink}</a></p-->
+            {/block:IndexPage}
+          </div>
+
+          {block:Text}
+            {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+            {block:Body}
+            <div class="body-text">
+              {Body}
+            </div>
+            {/block:Body}
+          {/block:Text}
+
+          {block:Quote}
+            <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
+            {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
+          {/block:Quote}
+
+          {block:Link}
+            <h2><a href="{URL}" {Target}>{Name}</a></h2>
+            {block:Description}<div class="caption">{Description}</div>{/block:Description}
+          {/block:Link}
+
+          {block:Audio}
+            {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
+            <div class="audio-player">
+              {block:AudioEmbed}
+                {AudioEmbed color="white"}
+              {/block:AudioEmbed}
+              {block:AudioPlayer}{AudioPlayerBlack}{/block:AudioPlayer}
+            </div>
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+          {/block:Audio}
+
+          {block:Photo}
+            <figure class="{block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
+              {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">{LinkCloseTag}
+              {block:Caption}<figcaption class="caption">{Caption}</figcaption>{/block:Caption}
+            </figure>
+          {/block:Photo}
+
+          {block:Photoset}
+            <div class="photoset">
+              {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+              {block:Photos}
+              <figure class="{block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
+                {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">{LinkCloseTag}
+                {block:Caption}<figcaption class="caption">{Caption}</figcaption>{/block:Caption}
+              </figure>
+              {/block:Photos}
+            </div>
+          {/block:Photoset}
+
+          {block:Panorama}
+            <figure{block:Caption} class="with-caption"{/block:Caption}>
+              {LinkOpenTag}<img src="{PhotoURL-Panorama}" width="{PhotoWidth-Panorama}" height="{PhotoHeight-Panorama}" alt="{PhotoAlt}">{LinkCloseTag}
+              {block:Caption}<figcaption class="caption">{Caption}</figcaption>{/block:Caption}
+            </figure>
+          {/block:Panorama}
+
+          {block:Video}
+            <figure{block:Caption} class="with-caption"{/block:Caption}>
+              <div class="video-player">
+                  {Video-700}
+              </div>
+              {block:Caption}<figcaption class="caption">{Caption}</figcaption>{/block:Caption}
+            </figure>
+          {/block:Video}
+
+          {block:Chat}
+            {block:Title}<h2>{Title}</h2>{/block:Title}
+            <ul class="conversation">
+              {block:Lines}
+              <li class="line {Alt}">
+                {block:Label}<span class="person">{Label}</span>{/block:Label}
+                <span class="person-said">{Line}</span>
+              </li>
+              {/block:Lines}
+            </ul>
+          {/block:Chat}
+
+          {block:Answer}
+            <section class="question">
+              <img src="{AskerPortraitURL-48}">
+              <div class="asker">{lang:Asker asked}:</div>
+              <div class="asker-question">
+                {Question}
+              </div>
+            </section>
+            {block:Answerer}
+              <section class="answerer">
+                <img src="{AnswererPortraitURL-48}">
+                <p>{lang:Answer} {Answerer}:</p>
+                <div class="answerer-answer">
+                  {Answer}
+                </div>
+              </section>
+            {/block:Answerer}
+            <div class="replies">{Replies}</div>
+          {/block:Answer}
+
+        </article>
+        {/block:Posts}
+
+        {block:PermalinkPagination}
+        <div class="pagination">
+          {block:PreviousPost}<a class="prev" href="{PreviousPost}">{lang:Previous}</a>{/block:PreviousPost}
+          {block:NextPost}<a class="next" href="{NextPost}">{lang:Next}</a>{/block:NextPost}
+        </div>
+        {/block:PermalinkPagination}
+
+        {block:Pagination}
+        <div class="pagination">
+          {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+          {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+        </div>
+        {/block:Pagination}
+      </main>
+      <footer>
+        <p class="text-small">Copyright &copy; 2018 MTP Network.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

@@ -19,13 +19,15 @@ body { background: #f3f3f3; }
 .page { margin-top: 2rem; }
 header { margin-bottom: 1rem; }
 #navigation { display: flex; align-items: flex-end; }
-#navigation div#logo { flex: 3 1 auto; }
-#navigation div.nav-link { flex: auto; padding-left: 0.5rem; text-align: right; }
-.active-page-link { text-decoration: underline; }
+#navigation div#logo { flex: 4 1 auto; }
+#navigation btn { margin-left: 0.5rem; }
+#navigation a:hover { text-decoration: none; }
+#navigation .btn-primary { background: #7bbbee; border: 1px solid #7bbbee; }
+#navigation .btn-primary a, #navigation .btn-primary a:visited { color: #f3f3f3; }
 #logo img { max-width: 200px; height: auto; }
 #logo a { margin-left: 0; }
 
-.form-container { padding: 0 0.5rem; }
+.form-container { padding: 0; }
 .form-container iframe { width: 100%; }
 
 #mc_embed_signup { background: #fff; clear: left; font-family: $form-font-family }
