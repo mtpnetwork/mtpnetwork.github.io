@@ -36,9 +36,10 @@ header { margin-bottom: 1rem; }
 .form-shadow, .form-bottom { border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
 .form-shadow { -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.37); -moz-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.37); box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.37); width: 98%; margin: 0 auto; }
 .form-top { background: #78baf0; height: 8px; }
-.form-bottom { background: #fafafa; height: 8px; }
+.form-bottom { background: #fafafa; minimum-height: 8px; }
+.form-bottom p { color: #777; font-family: $fallback-font-family; font-size: 0.8em; text-align: center; padding: 0.5rem 0 0.3rem; }
 
-.mc-field-group label { font-weight: bold; }
+.mc-field-group label { }
 .mc-field-group .radio-label { display: block; }
 
 #home-content { background: url('{{site.baseurl}}/img/km80-blur.jpg') no-repeat center center fixed; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; overflow: scroll; resize: both; }
@@ -83,7 +84,7 @@ footer { margin: 1rem 0; color: #aaa; font-family: $fallback-font-family; text-a
 #mc_embed_signup .asterisk {color:#e85c41; font-size:150%; font-weight:normal; position:relative; top:5px;}     
 #mc_embed_signup .clear {clear:both;}
 
-#mc_embed_signup .mc-field-group.mc-input-group ul {margin:0; padding:0; list-style:none;}
+#mc_embed_signup .mc-field-group.mc-input-group ul {margin:0; padding:0 0 0.2rem; list-style:none;}
 #mc_embed_signup .mc-field-group.mc-input-group ul li {display:block; padding:3px 0; margin:0;}
 #mc_embed_signup .mc-field-group.mc-input-group label {display:inline;}
 #mc_embed_signup .mc-field-group.mc-input-group input {display:inline; width:auto; border:none;}
