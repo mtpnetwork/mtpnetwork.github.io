@@ -40,7 +40,7 @@
     .tag-result p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; }
     .glightbox-container .ginner-container { padding: 3rem; }
     .glightbox-clean .ginner-container { box-shadow: unset; -webkit-box-shadow: unset; -moz-box-shadow: unset; }
-    .glightbox-clean .gslide-desc { display: block; font-size: 1em; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; line-height: 1.5; }
+    .glightbox-clean .gslide-desc { display: block; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.5; }
     .glightbox-desc { display: block; }
     a.glightbox-link, a.glightbox-link:hover, a.glightbox-link:visited { color: #222; text-decoration: none; }
     {CustomCSS}
@@ -65,7 +65,7 @@
         {block:TagPage}<article class="post"><div class="tag-result"><p class="mb-0">Updates tagged #{Tag}.</p></div></article>{/block:TagPage}
 
         {block:Posts}
-        <article class="post post-border {PostType} {TagsAsClasses}">
+        <article id="post-{PostID}" class="post post-border {PostType} {TagsAsClasses}">
 
           <div class="post-footer">
             {block:Date}
@@ -219,6 +219,12 @@
   var lightbox{PostID} = GLightbox({
     selector: 'glightbox{PostID}',
     descPosition: 'right'
+  });
+  var openContainerLinks{PostID} = document.getElementById('post-{PostID}').getElementsByClassName('open-slideshow');
+  Array.prototype.forEach.call(openContainerLinks{PostID}, function(openContainerLink) {
+    openContainerLink.addEventListener('click', function () {
+      lightbox{PostID}.open();
+    });
   });
   {/block:Photoset}
   {/block:Posts}
